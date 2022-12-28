@@ -26,8 +26,8 @@ public class FlowDriver {
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(FlowBean.class);
 
-        FileInputFormat.setInputPaths(job,new Path(args[0]));
-        FileOutputFormat.setOutputPath(job,new Path(args[1]));
+        FileInputFormat.setInputPaths(job, new Path(args[0]));
+        FileOutputFormat.setOutputPath(job, new Path(args[1]));
 
         boolean result = job.waitForCompletion(true);
         System.exit(result ? 0 : 1);

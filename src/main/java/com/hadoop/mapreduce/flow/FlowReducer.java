@@ -14,7 +14,9 @@ public class FlowReducer extends Reducer<Text,FlowBean,Text,FlowBean> {
 
         long totalUp = 0;
         long totalDown = 0;
-        for (FlowBean value : values) {
+
+        for (FlowBean value:
+             values) {
             totalUp += value.getUpFlow();
             totalDown += value.getDownFlow();
         }

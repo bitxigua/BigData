@@ -6,7 +6,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
-public class FlowMapper extends Mapper<LongWritable, Text,Text, FlowBean> {
+public class FlowMapper extends Mapper<LongWritable, Text,Text,FlowBean> {
 
     private Text outK = new Text();
     private FlowBean outV = new FlowBean();
@@ -15,11 +15,11 @@ public class FlowMapper extends Mapper<LongWritable, Text,Text, FlowBean> {
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String line = value.toString();
 
-        String[] split = line.split("\t");
+        String[] split = line.split(" ");
 
-        String phone = split[1];
-        String up = split[split.length - 3];
-        String down = split[split.length - 2];
+        String phone = split[0];
+        String up = split[1];
+        String down = split[2];
 
         outK.set(phone);
         outV.setUpFlow(Long.parseLong(up));

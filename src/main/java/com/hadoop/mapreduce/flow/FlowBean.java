@@ -8,9 +8,9 @@ import java.io.IOException;
 
 public class FlowBean implements Writable {
 
-    private long upFlow;//上行流量
-    private long downFlow;//下行流量
-    private long sumFlow;//总流量
+    private long upFlow;
+    private long downFlow;
+    private long sumFlow;
 
     public FlowBean() {
     }
